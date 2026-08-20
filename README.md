@@ -60,7 +60,7 @@ Most "payment gateway" portfolio projects are a `POST /pay` endpoint that flips 
 ### High-Level Flow
 Customer → Merchant → Payment Gateway → Payment Processor → Acquirer Bank → Card Network / NPCI / Issuer
 
-![High Level Flow](docs/diagrams/payment_gateway_high-level-flow.png)
+![High Level Flow](docs/diagrams/payment_gateway_high_level_flow.png)
 
 ### Payment Method Flows (Card / UPI / Net Banking / Wallet)
 Each payment method has its own sequence diagram covering the full request path, OTP/PIN auth, state transitions, and settlement.
