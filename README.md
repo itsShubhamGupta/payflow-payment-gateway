@@ -135,8 +135,8 @@ Payment state change
 
 | Layer | Technology |
 |---|---|
-| Backend | Java 21, Spring Boot 3 |
-| Database | PostgreSQL 15 |
+| Backend | Java 25, Spring Boot 4 |
+| Database | PostgreSQL  |
 | Cache / Scheduling | Redis (Sorted Sets for webhook delivery scheduling) |
 | Event Bus | Kafka (payment state change events) |
 | Auth | JWT (dashboard), API Key + HMAC (server-to-server) |
@@ -157,7 +157,7 @@ docker-compose up --build
 Services will be available at:
 - API: `http://localhost:8080`
 - Dashboard: `http://localhost:3000`
-- Postman collection: [`/docs/postman_collection.json`](docs/postman_collection.json)
+
 
 ### Environment Variables
 See [`.env.example`](.env.example) for required config (DB, Redis, Kafka, encryption keys).
