@@ -3,6 +3,7 @@ package com.be.razorpay.common.exception;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.http.HttpServletRequest;
+import org.apache.coyote.BadRequestException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -61,6 +62,17 @@ public class GlobalExceptionHandler {
             BadCredentialsException ex) {
 
         String errorCode = "BAD_CREDENTIALS";
+
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(ErrorResponse.of(errorCode, ex.getMessage()));
+    }
+
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity<ErrorResponse> badRequestException(
+            BadRequestException ex) {
+
+        String errorCode = "BAD_REQUEST";
 
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
